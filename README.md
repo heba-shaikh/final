@@ -1,4 +1,5 @@
 # final
+https://final-yamj.onrender.com/
 
 When brainstorming what to build for my dashboard, I realized that I wanted to create something impactful for the public. I then recognized the need for a centralized platform to help individuals find the best medical services for them. So, I realized that it would be useful to create a dashboard that consolidates hospitals and medical centers based on location and their performance in addressing various health conditions.
 
@@ -9,3 +10,4 @@ As I delved deeper into the dashboard's design, I recognized the significance of
 Thematically, I figured a maroon colored theme would be most relevant for the purposes of this dashboard. I didn't want to overdo the theme with too many colors and pictures as this might overwhelm the user, who is really just trying to find a medical center for a medical emergency.
 
 Through this journey, I built upon my knowledge in data science concepts, from data preprocessing and visualization to user interface design and interactivity. 
+
