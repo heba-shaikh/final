@@ -88,7 +88,9 @@ html.Div([
                 {'name': 'State', 'id': 'State'},
                 {'name': 'ZIP Code', 'id': 'ZIP Code'},
             ], style_table={'overflowX': 'auto', 'margin-left': '0px'}, style_cell={'font_size': '16px'})],  style={"color": "maroon"}, 
-            className = "table-style")])
+            className = "table-style"),
+            html.A('Link to github', href='https://github.com/heba-shaikh/final')
+])
 
 #Callbacks
 @app.callback(
