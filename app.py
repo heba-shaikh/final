@@ -20,9 +20,9 @@ states = df['State'].unique() #Creates list of states
 zipcodes = df['ZIP Code'].unique() #Creates list of zipcodes
 conditions = df["Condition"].unique() #Creates list of conditions
 
-app.layout = html.Div([
+app.layout = html.Div(style={'backgroundColor': 'beige'}, children=[
     ##Makes title of dashboard, including surrounding by hospital icons
-html.Div([    
+html.Div([
     html.Div([
     html.I(className = "fas fa-hospital", style={"font-size": "48px"}),
     html.H1("Find the Best Medical Service For You!", style={"font-family": "Montserrat, sans-serif"}),
@@ -33,7 +33,7 @@ html.Br(),
 html.Div([
 html.Div([ #Subheading providing instructions for using website
     html.P("Select your state and/or nearest ZIP Code. Additionally, choose the condition for which you are seeking treatment. Based on these parameters, you will receive a list of hospitals along with their corresponding scores, indicating their performance in addressing your condition. Higher scores indicate better-performing hospitals."
-, style={"font-family": "Montserrat, sans-serif", "font-size": "17px"}, className="twelve columns"), #description under title
+, style={"color": "maroon", "font-family": "Montserrat, sans-serif", "font-size": "17px"}, className="twelve columns"), #description under title
     html.Br(),
     html.Br(),
     html.Br(),
@@ -58,13 +58,13 @@ html.Div([ #Subheading providing instructions for using website
     html.Br(),
     html.Br(),
     html.Br(),
-    html.P("Enter Condition:", style={"font-family": "Montserrat, sans-serif", "font-size": "17px"},
+    html.P("Enter Condition:", style={"color": "maroon", "font-family": "Montserrat, sans-serif", "font-size": "17px"},
                 className="twelve columns"),
         #Creating radio button for conditions from list
         dcc.RadioItems(
         id='condition-dropdown',
         options = [{'label': condition, 'value': condition} for condition in conditions],
-        style={"font-size": "17px"},
+        style={"color": "maroon","font-size": "17px"},
         className= "twelve columns",
 
 ), ], className="six columns")]),
@@ -163,8 +163,7 @@ def update_table(selected_state, selected_zipcodes, selected_condition): #Update
         'County Name': 'first',
         'State': 'first',
         'ZIP Code': 'first',
-        'Score': 'mean'
-    }).reset_index()
+        'Score': 'mean'}).reset_index()
 
     filtered_df = filtered_df[['Hospital Name', 'Address', 'County Name', 'State', 'ZIP Code', 'Score']]     # Reorder columns
     filtered_df = filtered_df.sort_values(by='Score', ascending=False) #Sort them in descending order by score
@@ -173,6 +172,4 @@ def update_table(selected_state, selected_zipcodes, selected_condition): #Update
     return newcols
 
 if __name__ == '__main__':
-    app.run(jupyter_mode='tab', debug=True, port=8052)
-
-
+    app.run_server(debug=True)
